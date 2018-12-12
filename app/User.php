@@ -9,9 +9,6 @@ use OwenIt\Auditing\Contracts\UserResolver;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-    use EntrustUserTrait;
-    use Auditable;
     /**
      * The attributes that are mass assignable.
      *

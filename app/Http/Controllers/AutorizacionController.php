@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\EPS;
+use App\Autorizacion;
 use Illuminate\Support\Facades\Crypt;
 
-class EPSController extends Controller
+
+class AutorizacionController extends Controller
 {/**
      * Display a listing of the resource.
      *
@@ -14,13 +15,11 @@ class EPSController extends Controller
      */
     public function index()
     {
-        $eps=EPS::all();
-        foreach($eps as $ep){
-            
-            $ep->nombre = Crypt::decrypt($ep->nombre);
-            $ep->num = Crypt::decrypt($ep->num);
+        $autorizacion=Autorizacion::all();
+        foreach($autorizacion as $auto){
+            $auto->numero = Crypt::decrypt($auto->numero);
         }
-        return response($eps);
+        return response($autorizacion);
     }
 
 
@@ -32,10 +31,10 @@ class EPSController extends Controller
      */
     public function store(Request $request)
     {
-        $eps = new EPS();
-        $eps->fill([
-            'nombre' => Crypt::encrypt($request->nombre),
-            'num' => Crypt::encrypt($request->num)
+
+        $autorizacion = new Autorizacion();
+        $autorizacion->fill([
+            'numero' => Crypt::encrypt($request->numero)
         ])->save();
         return response(['mensaje'=>'Creado Correctamente']);
     }
@@ -48,10 +47,9 @@ class EPSController extends Controller
      */
     public function show($id)
     {
-        $eps=EPS::find($id);
-        $eps->nombre = Crypt::decrypt($eps->nombre);
-        $eps->num = Crypt::decrypt($eps->num);
-        return response()->json($eps);
+        $autorizacion=Autorizacion::find($id);
+        $autorizacion->numero = Crypt::decrypt($autorizacion->numero);
+        return response()->json($autorizacion);
     }
 
 
@@ -64,12 +62,11 @@ class EPSController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $eps=EPS::find($id);
-        $eps->fill([
-            'nombre' => Crypt::encrypt($request->nombre),
-            'num' => Crypt::encrypt($request->num)
+       $autorizacion=Autorizacion::find($id);
+        $autorizacion->fill([
+            'numero' => Crypt::encrypt($request->numero)
         ])->save();
-        return response(['mensaje'=>'Actualizado Correctamente']);
+       return response(['mensaje'=>'Actualizado Correctamente']);
     }
 
     /**
@@ -80,7 +77,8 @@ class EPSController extends Controller
      */
     public function destroy($id)
     {
-        $eps=EPS::find($id);
-        $eps->delete();
+        $autorizacion=Autorizacion::find($id);
+        $autorizacion->delete();
         return response(['mensaje'=>'Eliminado Correctamente']);
-    }}
+    }
+}

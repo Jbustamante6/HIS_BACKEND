@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Birards;
+use Illuminate\Support\Facades\Crypt;
 
 class BirardsController extends Controller
 {/**
@@ -52,10 +53,10 @@ class BirardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $birards=Birards::find($id);
-       $birards->fill($request->all());
-       $birards->save();
-       return response(['mensaje'=>'Actualizado Correctamente']);
+        $birard=Birards::find($id);
+        $birard->fill($request->all());
+        $birard->save();
+        return response(['mensaje'=>'Actualizado Correctamente']);
     }
 
     /**

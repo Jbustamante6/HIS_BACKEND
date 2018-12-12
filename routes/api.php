@@ -19,7 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::group(['middleware' => 'cors'],function(){
-    //Route::group(['middleware'=> 'jwt.auth'], function () {
+    Route::post('auth', 'AuthController@auth');
+    Route::group(['middleware'=> 'jwt.auth'], function () {
       Route::resource('users', 'UsersController');  
       Route::resource('pacientes', 'PacientesController');
       Route::resource('ordenes', 'OrdenController');
@@ -31,8 +32,6 @@ Route::group(['middleware' => 'cors'],function(){
       Route::resource('eps', 'EPSController');
       Route::resource('birards', 'BirardsController');
       Route::resource('birardsEstudios', 'BirardsEstudiosController');
-
-
-
-    //});
+      Route::resource('autorizacion', 'AutorizacionController');
+    });
 });
