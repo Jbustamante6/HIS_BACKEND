@@ -29,8 +29,8 @@ class Users extends Model implements AuditableContract
     /**
      * @var array
      */
-    protected $fillable = ['username', 'password', 'nombres', 'apellidos', 'created_at', 'updated_at', 'deleted_at'];
-
+    protected $fillable = ['username', 'nombres', 'apellidos', 'created_at', 'updated_at', 'deleted_at'];
+    protected $hidden=['password'];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

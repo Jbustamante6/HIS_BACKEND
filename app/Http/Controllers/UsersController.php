@@ -3,28 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Users;
 
 class UsersController extends Controller
-{
-    /**
+{/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $users=Users::all();
+        return response($users);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,7 +26,8 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Users::create($request->all());
+        return response(['mensaje'=>'Creado Correctamente']);
     }
 
     /**
@@ -45,19 +38,10 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $users=Users::find($id);
+        return response()->json($users);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -68,7 +52,10 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $users=Users::find($id);
+       $users->fill($request->all());
+       $users->save();
+       return response(['mensaje'=>'Actualizado Correctamente']);
     }
 
     /**
@@ -79,6 +66,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users=Users::find($id);
+        $users->delete();
+        return response(['mensaje'=>'Eliminado Correctamente']);
     }
 }

@@ -3,28 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Orden;
 
 class OrdenController extends Controller
-{
-    /**
+{/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $orden=Orden::all();
+        return response($orden);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,7 +26,8 @@ class OrdenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Orden::create($request->all());
+        return response(['mensaje'=>'Creado Correctamente']);
     }
 
     /**
@@ -45,19 +38,10 @@ class OrdenController extends Controller
      */
     public function show($id)
     {
-        //
+        $orden=Orden::find($id);
+        return response()->json($orden);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -68,7 +52,10 @@ class OrdenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $orden=Orden::find($id);
+       $orden->fill($request->all());
+       $orden->save();
+       return response(['mensaje'=>'Actualizado Correctamente']);
     }
 
     /**
@@ -79,6 +66,8 @@ class OrdenController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $orden=Orden::find($id);
+        $orden->delete();
+        return response(['mensaje'=>'Eliminado Correctamente']);
     }
 }

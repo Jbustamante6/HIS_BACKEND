@@ -3,28 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Imagen;
 class ImagenController extends Controller
-{
-    /**
+{/**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $imagen=Imagen::all();
+        return response($imagen);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -34,7 +25,8 @@ class ImagenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Imagen::create($request->all());
+        return response(['mensaje'=>'Creado Correctamente']);
     }
 
     /**
@@ -45,19 +37,10 @@ class ImagenController extends Controller
      */
     public function show($id)
     {
-        //
+        $imagen=Imagen::find($id);
+        return response()->json($imagen);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -68,7 +51,10 @@ class ImagenController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $imagen=Imagen::find($id);
+       $imagen->fill($request->all());
+       $imagen->save();
+       return response(['mensaje'=>'Actualizado Correctamente']);
     }
 
     /**
@@ -79,6 +65,7 @@ class ImagenController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
-}
+        $imagen=Imagen::find($id);
+        $imagen->delete();
+        return response(['mensaje'=>'Eliminado Correctamente']);
+    }}
