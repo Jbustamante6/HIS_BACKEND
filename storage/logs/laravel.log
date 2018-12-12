@@ -1,0 +1,157 @@
+[2018-12-11 03:11:11] local.ERROR: Command "config:publish" is not defined.
+
+Did you mean one of these?
+    config:cache
+    config:clear
+    vendor:publish {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"config:publish\" is not defined.
+
+Did you mean one of these?
+    config:cache
+    config:clear
+    vendor:publish at /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php:618)
+[stacktrace]
+#0 /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php(229): Symfony\\Component\\Console\\Application->find('config:publish')
+#1 /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/jefer/projects/HIS-Back/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-12-11 03:13:05] local.ERROR: Command "config:publish" is not defined.
+
+Did you mean one of these?
+    config:cache
+    config:clear
+    vendor:publish {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"config:publish\" is not defined.
+
+Did you mean one of these?
+    config:cache
+    config:clear
+    vendor:publish at /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php:618)
+[stacktrace]
+#0 /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php(229): Symfony\\Component\\Console\\Application->find('config:publish')
+#1 /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/jefer/projects/HIS-Back/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2018-12-11 03:19:37] local.ERROR: trim() expects parameter 1 to be string, array given {"exception":"[object] (ErrorException(code: 0): trim() expects parameter 1 to be string, array given at /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php:538)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'trim() expects ...', '/home/jefer/pro...', 538, Array)
+#1 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(538): trim(Array, '/')
+#2 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(444): Illuminate\\Routing\\Router->prefix(Array)
+#3 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(423): Illuminate\\Routing\\Router->createRoute(Array, Array, NULL)
+#4 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(140): Illuminate\\Routing\\Router->addRoute(Array, Array, NULL)
+#5 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(221): Illuminate\\Routing\\Router->get(Array)
+#6 /home/jefer/projects/HIS-Back/routes/api.php(25): Illuminate\\Support\\Facades\\Facade::__callStatic('get', Array)
+#7 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(389): Illuminate\\Routing\\Router->{closure}(Object(Illuminate\\Routing\\Router))
+#8 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(349): Illuminate\\Routing\\Router->loadRoutes(Object(Closure))
+#9 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(221): Illuminate\\Routing\\Router->group(Array, Object(Closure))
+#10 /home/jefer/projects/HIS-Back/routes/api.php(26): Illuminate\\Support\\Facades\\Facade::__callStatic('group', Array)
+#11 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(393): require('/home/jefer/pro...')
+#12 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(349): Illuminate\\Routing\\Router->loadRoutes('/home/jefer/pro...')
+#13 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(105): Illuminate\\Routing\\Router->group(Array, '/home/jefer/pro...')
+#14 /home/jefer/projects/HIS-Back/app/Providers/RouteServiceProvider.php(71): Illuminate\\Routing\\RouteRegistrar->group('/home/jefer/pro...')
+#15 /home/jefer/projects/HIS-Back/app/Providers/RouteServiceProvider.php(38): App\\Providers\\RouteServiceProvider->mapApiRoutes()
+#16 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#17 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#18 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/Container.php(549): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(74): Illuminate\\Container\\Container->call(Array)
+#22 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(33): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#23 /home/jefer/projects/HIS-Back/app/Providers/RouteServiceProvider.php(28): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#24 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#25 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#26 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#27 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#28 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/Container.php(549): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#29 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(792): Illuminate\\Container\\Container->call(Array)
+#30 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#31 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 20)
+#32 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(776): array_walk(Array, Object(Closure))
+#33 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#34 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(213): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#35 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#36 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#37 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 /home/jefer/projects/HIS-Back/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 /home/jefer/projects/HIS-Back/server.php(21): require_once('/home/jefer/pro...')
+#40 {main}
+"} 
+[2018-12-11 03:19:42] local.ERROR: trim() expects parameter 1 to be string, array given {"exception":"[object] (ErrorException(code: 0): trim() expects parameter 1 to be string, array given at /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php:538)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'trim() expects ...', '/home/jefer/pro...', 538, Array)
+#1 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(538): trim(Array, '/')
+#2 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(444): Illuminate\\Routing\\Router->prefix(Array)
+#3 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(423): Illuminate\\Routing\\Router->createRoute(Array, Array, NULL)
+#4 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(140): Illuminate\\Routing\\Router->addRoute(Array, Array, NULL)
+#5 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(221): Illuminate\\Routing\\Router->get(Array)
+#6 /home/jefer/projects/HIS-Back/routes/api.php(25): Illuminate\\Support\\Facades\\Facade::__callStatic('get', Array)
+#7 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(389): Illuminate\\Routing\\Router->{closure}(Object(Illuminate\\Routing\\Router))
+#8 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(349): Illuminate\\Routing\\Router->loadRoutes(Object(Closure))
+#9 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(221): Illuminate\\Routing\\Router->group(Array, Object(Closure))
+#10 /home/jefer/projects/HIS-Back/routes/api.php(26): Illuminate\\Support\\Facades\\Facade::__callStatic('group', Array)
+#11 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(393): require('/home/jefer/pro...')
+#12 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/Router.php(349): Illuminate\\Routing\\Router->loadRoutes('/home/jefer/pro...')
+#13 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(105): Illuminate\\Routing\\Router->group(Array, '/home/jefer/pro...')
+#14 /home/jefer/projects/HIS-Back/app/Providers/RouteServiceProvider.php(71): Illuminate\\Routing\\RouteRegistrar->group('/home/jefer/pro...')
+#15 /home/jefer/projects/HIS-Back/app/Providers/RouteServiceProvider.php(38): App\\Providers\\RouteServiceProvider->mapApiRoutes()
+#16 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#17 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#18 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/Container.php(549): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(74): Illuminate\\Container\\Container->call(Array)
+#22 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(33): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#23 /home/jefer/projects/HIS-Back/app/Providers/RouteServiceProvider.php(28): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#24 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#25 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#26 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#27 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#28 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/Container.php(549): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#29 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(792): Illuminate\\Container\\Container->call(Array)
+#30 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(775): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#31 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 20)
+#32 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(776): array_walk(Array, Object(Closure))
+#33 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#34 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(213): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#35 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#36 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#37 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 /home/jefer/projects/HIS-Back/public/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 /home/jefer/projects/HIS-Back/server.php(21): require_once('/home/jefer/pro...')
+#40 {main}
+"} 
+[2018-12-11 03:36:17] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists (SQL: create table `users` (`id` int unsigned not null auto_increment primary key, `name` varchar(255) not null, `email` varchar(255) not null, `password` varchar(255) not null, `remember_token` varchar(100) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate utf8mb4_unicode_ci) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists (SQL: create table `users` (`id` int unsigned not null auto_increment primary key, `name` varchar(255) not null, `email` varchar(255) not null, `password` varchar(255) not null, `remember_token` varchar(100) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate utf8mb4_unicode_ci) at /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, Doctrine\\DBAL\\Driver\\PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists at /home/jefer/projects/HIS-Back/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:107, PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists at /home/jefer/projects/HIS-Back/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php:105)
+[stacktrace]
+#0 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('create table `u...', Array, Object(Closure))
+#1 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Connection.php(459): Illuminate\\Database\\Connection->run('create table `u...', Array, Object(Closure))
+#2 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(86): Illuminate\\Database\\Connection->statement('create table `u...')
+#3 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(252): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(165): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(221): Illuminate\\Database\\Schema\\Builder->create('users', Object(Closure))
+#6 /home/jefer/projects/HIS-Back/database/migrations/2014_10_12_000000_create_users_table.php(23): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(359): CreateUsersTable->up()
+#8 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(366): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(177): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateUsersTable), 'up')
+#10 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(146): Illuminate\\Database\\Migrations\\Migrator->runUp('/home/jefer/pro...', 1, false)
+#11 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(95): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(69): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#14 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#15 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#17 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Container/Container.php(549): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#18 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#19 /home/jefer/projects/HIS-Back/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#20 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php(953): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php(248): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /home/jefer/projects/HIS-Back/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /home/jefer/projects/HIS-Back/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /home/jefer/projects/HIS-Back/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 {main}
+"} 
