@@ -19,7 +19,12 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
  * @property Estudio[] $estudios
  */
 class Orden extends Model
-{
+{   
+    use SoftDeletes, CascadeSoftDeletes, Auditable;
+    protected $cascadeDeletes =['estudios', 'eps'];
+
+    protected $dates = ['deleted_at'];
+
     /**
      * The table associated with the model.
      * 
@@ -35,9 +40,9 @@ class Orden extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function ep()
+    public function eps()
     {
-        return $this->belongsTo('App\Ep', 'eps_id');
+        return $this->belongsTo('App\EPS', 'eps_id');
     }
 
     /**

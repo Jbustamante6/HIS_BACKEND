@@ -23,7 +23,9 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 class Lecturas extends Model implements AuditableContract 
 {
     use SoftDeletes, CascadeSoftDeletes, Auditable;
+    protected $cascadeDeletes =['estudio', 'user'];
 
+    protected $dates = ['deleted_at'];
     /**
      * @var array
      */

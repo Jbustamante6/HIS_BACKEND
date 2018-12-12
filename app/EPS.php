@@ -20,6 +20,10 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 class EPS extends Model implements AuditableContract 
 {
     use SoftDeletes, CascadeSoftDeletes, Auditable;
+    protected $cascadeDeletes =['ordens'];
+
+    protected $dates = ['deleted_at'];
+    
     /**
      * The table associated with the model.
      * 

@@ -19,6 +19,10 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 class Imagen extends Model implements AuditableContract 
 {
     use SoftDeletes, CascadeSoftDeletes, Auditable;
+    protected $cascadeDeletes =['estudios'];
+
+    protected $dates = ['deleted_at'];
+
     /**
      * The table associated with the model.
      * 

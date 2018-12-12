@@ -19,6 +19,10 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
 class Birards extends Model implements AuditableContract 
 {
     use SoftDeletes, CascadeSoftDeletes, Auditable;
+    protected $cascadeDeletes =['birardsHasEstudios'];
+
+    protected $dates = ['deleted_at'];
+
     /**
      * @var array
      */
