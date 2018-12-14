@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lecturas;
+use App\User;
+
 
 class LecturasController extends Controller
-{/**
+{
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -69,5 +72,12 @@ class LecturasController extends Controller
         $lecturas=Lecturas::find($id);
         $lecturas->delete();
         return response(['mensaje'=>'Eliminado Correctamente']);
+    }
+    
+    public function endLecturas(Request $request){
+        
+        $user_id=User::resolveId();
+        $lecturas=Lecturas::where('users_id', '=', $user_id)->where('estudios_id', '=', $request->estudios_id)->update(['hora_fn_lectura'=> $request->hora_fn_lectura]);
+        return response(['mensaje'=>'Actualizado Correctamente', $lecturas]);
     }
 }

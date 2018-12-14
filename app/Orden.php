@@ -18,7 +18,7 @@ use OwenIt\Auditing\Contracts\Auditable as AuditableContract;
  * @property Ep $ep
  * @property Estudio[] $estudios
  */
-class Orden extends Model
+class Orden extends Model implements AuditableContract 
 {   
     use SoftDeletes, CascadeSoftDeletes, Auditable;
     protected $cascadeDeletes =['estudios', 'eps', 'autorizacion'];
@@ -35,7 +35,7 @@ class Orden extends Model
     /**
      * @var array
      */
-    protected $fillable = ['eps_id', 'num', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = ['eps_id', 'num', 'autorizacion_id', 'created_at', 'updated_at', 'deleted_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

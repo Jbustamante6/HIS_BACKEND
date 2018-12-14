@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Orden;
+use Illuminate\Support\Facades\Crypt;
+
 
 class OrdenController extends Controller
 {/**
@@ -13,7 +15,18 @@ class OrdenController extends Controller
      */
     public function index()
     {
-        $orden=Orden::all();
+        $orden = Orden::join('eps', 'eps_id', '=', 'eps.id')
+                      ->join('autorizacion', 'autorizacion_id', '=', 'autorizacion.id')
+                      ->select('orden.*', 'autorizacion.numero as autorizacion_num', 'eps.num as eps_num', 'eps.nombre as eps_nombre')
+                      ->get();
+        foreach( $orden as $order){
+            $order->num = Crypt::decrypt($order->num);
+            $order->autorizacion_num = Crypt::decrypt($order->autorizacion_num);
+            $order->eps_num = Crypt::decrypt($order->eps_num);
+            $order->eps_nombre = Crypt::decrypt($order->eps_nombre);
+
+           
+        }
         return response($orden);
     }
 
@@ -25,8 +38,14 @@ class OrdenController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        Orden::create($request->all());
+    {   
+        //Orden::create($request->all());
+        $orden = new Orden();
+        $orden->fill([
+            'num' => Crypt::encrypt($request->num),
+            'eps_id' => $request->eps_id,
+            'autorizacion_id' => $request->autorizacion_id
+        ])->save();
         return response(['mensaje'=>'Creado Correctamente']);
     }
 
@@ -38,8 +57,19 @@ class OrdenController extends Controller
      */
     public function show($id)
     {
-        $orden=Orden::find($id);
-        return response()->json($orden);
+        $orden=Orden::where('orden.id', '=', $id)
+                    ->join('eps', 'eps_id', '=', 'eps.id')
+                    ->join('autorizacion', 'autorizacion_id', '=', 'autorizacion.id')
+                    ->select('orden.*', 'autorizacion.numero as autorizacion_num', 'eps.num as eps_num', 'eps.nombre as eps_nombre')
+                    ->get();
+                    
+        if(isset($orden[0])){
+            $orden[0]->num = Crypt::decrypt($orden[0]->num);
+            $orden[0]->autorizacion_num = Crypt::decrypt($orden[0]->autorizacion_num);
+            $orden[0]->eps_num = Crypt::decrypt($orden[0]->eps_num);
+            $orden[0]->eps_nombre = Crypt::decrypt($orden[0]->eps_nombre);
+        }
+        return response()->json($orden[0] ??  (object) array());
     }
 
 
@@ -53,8 +83,11 @@ class OrdenController extends Controller
     public function update(Request $request, $id)
     {
        $orden=Orden::find($id);
-       $orden->fill($request->all());
-       $orden->save();
+       $orden->fill([
+            'num' => Crypt::encrypt($request->num),
+            'eps_id' => $request->eps_id,
+            'autorizacion_id' => $request->autorizacion_id
+        ])->save();
        return response(['mensaje'=>'Actualizado Correctamente']);
     }
 

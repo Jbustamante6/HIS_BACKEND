@@ -33,5 +33,11 @@ Route::group(['middleware' => 'cors'],function(){
       Route::resource('birards', 'BirardsController');
       Route::resource('birardsEstudios', 'BirardsEstudiosController');
       Route::resource('autorizacion', 'AutorizacionController');
+      
+      Route::post('imagenes/updated/{id}', 'ImagenController@updated');
+      Route::post('estadisticas', 'EstudiosController@estadisticas');
+      Route::post('esdtudioCientifico', 'EstudiosController@esdtudioCientifico');
+    
+      Route::put('endLecturas/{id}', 'LecturasController@endLecturas');
     });
 });

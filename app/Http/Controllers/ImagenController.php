@@ -25,7 +25,14 @@ class ImagenController extends Controller
      */
     public function store(Request $request)
     {
-        Imagen::create($request->all());
+        //Imagen::create($request->all());
+        $imagen = new Imagen();
+        $file = $request->file('img');
+        if(isset($file)){	
+            $imgString = base64_encode(file_get_contents($file));
+            $imagen->fill(['img' => $imgString])->save();
+        }
+        
         return response(['mensaje'=>'Creado Correctamente']);
     }
 
@@ -51,10 +58,14 @@ class ImagenController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $imagen=Imagen::find($id);
-       $imagen->fill($request->all());
-       $imagen->save();
-       return response(['mensaje'=>'Actualizado Correctamente']);
+        $imagen=Imagen::find($id);
+        $file = $request->file('img');
+        if(isset($file)){	
+            $imgString = base64_encode(file_get_contents($request->file('img')));
+            $imagen->fill(['img' => $imgString])->save();
+        }
+        
+        return response(['mensaje'=>'Actualizado Correctamente']);
     }
 
     /**
@@ -68,4 +79,18 @@ class ImagenController extends Controller
         $imagen=Imagen::find($id);
         $imagen->delete();
         return response(['mensaje'=>'Eliminado Correctamente']);
-    }}
+    }
+    
+    public function updated(Request $request, $id)
+    {
+        $imagen=Imagen::find($id);
+        $file = $request->file('img');
+
+        if(isset($file)){	
+            $imgString = base64_encode(file_get_contents($file));
+            $imagen->fill(['img' => $imgString])->save();
+        }
+        
+        return response(['mensaje'=>'Actualizado Correctamente']);
+    }
+}

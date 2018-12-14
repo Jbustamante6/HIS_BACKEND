@@ -40,6 +40,6 @@ class EstadosEstudio extends Model implements AuditableContract
      */
     public function estudios()
     {
-        return $this->hasMany('App\Estudio');
+        return $this->hasMany('App\Estudios');
     }
 }

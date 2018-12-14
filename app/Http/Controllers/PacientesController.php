@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pacientes;
+use Illuminate\Support\Facades\Crypt;
+
 class PacientesController extends Controller
-{/**
+{
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -13,6 +16,11 @@ class PacientesController extends Controller
     public function index()
     {
         $pacientes=Pacientes::all();
+        foreach($pacientes as $paciente){
+            $paciente->nombres = Crypt::decrypt($paciente->nombres);
+            $paciente->apellidos = Crypt::decrypt($paciente->apellidos);
+            $paciente->n_ident = Crypt::decrypt($paciente->n_ident);
+        }
         return response($pacientes);
     }
 
@@ -25,7 +33,15 @@ class PacientesController extends Controller
      */
     public function store(Request $request)
     {
-        Pacientes::create($request->all());
+        //Pacientes::create($request->all());
+        $pacientes = new Pacientes();
+        
+        $pacientes->fill([
+            'nombres' => Crypt::encrypt($request->nombres),
+            'apellidos' => Crypt::encrypt($request->apellidos),
+            'fecha_nacimiento' => $request->fecha_nacimiento,
+            'n_ident' => Crypt::encrypt($request->n_ident)
+        ])->save();
         return response(['mensaje'=>'Creado Correctamente']);
     }
 
@@ -38,6 +54,9 @@ class PacientesController extends Controller
     public function show($id)
     {
         $paciente=Pacientes::find($id);
+        $paciente->nombres = Crypt::decrypt($paciente->nombres);
+        $paciente->apellidos = Crypt::decrypt($paciente->apellidos);
+        $paciente->n_ident = Crypt::decrypt($paciente->n_ident);
         return response()->json($paciente);
     }
 
@@ -52,8 +71,12 @@ class PacientesController extends Controller
     public function update(Request $request, $id)
     {
        $paciente=Pacientes::find($id);
-       $paciente->fill($request->all());
-       $paciente->save();
+       $paciente->fill([
+            'nombres' => Crypt::encrypt($request->nombres),
+            'apellidos' => Crypt::encrypt($request->apellidos),
+            'fecha_nacimiento' => $request->fecha_nacimiento,
+            'n_ident' => Crypt::encrypt($request->n_ident)
+        ])->save();
        return response(['mensaje'=>'Actualizado Correctamente']);
     }
 
